@@ -54,6 +54,7 @@ EPResourceManager::EPResourceManager()
 EPResourceManager::~EPResourceManager()
 {
     CC_SAFE_FREE(m_resources);
+	CC_SAFE_RELEASE_NULL(_sharedResourceManager);
 }
 
 EPResourceManager *EPResourceManager::object(void)
