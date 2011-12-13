@@ -6,8 +6,6 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
-static bool isLoaded = false;
-
 CCScene* HelloWorld::scene()
 {
 	// 'scene' is an autorelease object
@@ -31,6 +29,8 @@ bool HelloWorld::init()
 		return false;
 	}
 
+	CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
+
 	EPNotificationCenter::sharedNotifCenter()->addObserver(this, 
 		callfuncO_selector(HelloWorld::completedCallback),
 		kResourceLoadedNotif, 
@@ -42,13 +42,9 @@ bool HelloWorld::init()
 		this, 
 		callfuncO_selector(HelloWorld::loadedCallback));
 
-	CCMenuItem *item2 = CCMenuItemFont::itemFromString("Create Block", 
-		this, 
-		callfuncO_selector(HelloWorld::completedCallback));
-
-	CCMenu *m = CCMenu::menuWithItems(item1, item2, NULL);
+	CCMenu *m = CCMenu::menuWithItems(item1, NULL);
 	m->alignItemsVerticallyWithPadding(10.0f);
-	m->setPosition(ccp_CENTER());
+	m->setPosition(ccp(screenSize.width / 2, screenSize.height * 0.8f));
 	this->addChild(m);
 
 	return true;
@@ -60,13 +56,10 @@ void HelloWorld::loadedCallback(CCObject* pSender)
 	EPResourceManager::sharedResourceManager()->addPngResourceAsync("HelloWorld",false);
 	EPResourceManager::sharedResourceManager()->addPngResourceAsync("4444_pics",true);
 	EPResourceManager::sharedResourceManager()->loadResourceAsync();    
-	isLoaded = true;
 }
 
 void HelloWorld::completedCallback(CCObject* pSender)
 {
-	if (isLoaded)
-	{
 		CCLOG("completedCallback\n");
 
 		CCSprite *sp = CCSprite::spriteWithSpriteFrameName("blocks.png");
@@ -84,7 +77,6 @@ void HelloWorld::completedCallback(CCObject* pSender)
 
 		this->addLongPressRecognizer(sp);
 		this->setLongPressInterval(0.5f);
-	}
 }
 
 bool HelloWorld::gestureRecognizer(GestureRecognizer *gestureRecognizer)
