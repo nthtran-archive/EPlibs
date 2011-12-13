@@ -6,6 +6,8 @@
 using namespace cocos2d;
 using namespace CocosDenshion;
 
+static bool isLoaded = false;
+
 CCScene* HelloWorld::scene()
 {
 	// 'scene' is an autorelease object
@@ -36,11 +38,11 @@ bool HelloWorld::init()
 
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 
-	CCMenuItem *item1 = CCMenuItemFont::itemFromString("loaded", 
+	CCMenuItem *item1 = CCMenuItemFont::itemFromString("Load", 
 		this, 
 		callfuncO_selector(HelloWorld::loadedCallback));
 
-	CCMenuItem *item2 = CCMenuItemFont::itemFromString("completed", 
+	CCMenuItem *item2 = CCMenuItemFont::itemFromString("Create Block", 
 		this, 
 		callfuncO_selector(HelloWorld::completedCallback));
 
@@ -58,27 +60,31 @@ void HelloWorld::loadedCallback(CCObject* pSender)
 	EPResourceManager::sharedResourceManager()->addPngResourceAsync("HelloWorld",false);
 	EPResourceManager::sharedResourceManager()->addPngResourceAsync("4444_pics",true);
 	EPResourceManager::sharedResourceManager()->loadResourceAsync();    
+	isLoaded = true;
 }
 
 void HelloWorld::completedCallback(CCObject* pSender)
 {
-	CCLOG("completedCallback\n");
+	if (isLoaded)
+	{
+		CCLOG("completedCallback\n");
 
-	CCSprite *sp = CCSprite::spriteWithSpriteFrameName("blocks.png");
-	sp->setPosition(ccp_CENTER());
-	sp->setTag(123);
-	this->addChild(sp);
+		CCSprite *sp = CCSprite::spriteWithSpriteFrameName("blocks.png");
+		sp->setPosition(ccp_CENTER());
+		sp->setTag(123);
+		this->addChild(sp);
 
-	this->addTapRecognizer(sp);
+		this->addTapRecognizer(sp);
 
-	this->addRotationRecognizer(sp);
+		this->addRotationRecognizer(sp);
 
-	this->addPinchRecognizer(sp);
+		this->addPinchRecognizer(sp);
 
-	this->addPanRecognizer(sp);
+		this->addPanRecognizer(sp);
 
-	this->addLongPressRecognizer(sp);
-	this->setLongPressInterval(0.5f);
+		this->addLongPressRecognizer(sp);
+		this->setLongPressInterval(0.5f);
+	}
 }
 
 bool HelloWorld::gestureRecognizer(GestureRecognizer *gestureRecognizer)

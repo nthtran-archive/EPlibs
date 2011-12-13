@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{69b3923b-7820-4ff9-8ada-e86b95f797a6}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{469dd95b-11e6-47c1-afdc-0576ca1b5639}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{e7ac9627-625a-4236-8692-c130d63fea97}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="win32\res\EPSampleCod.ico">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\CloseSelected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\CloseNormal.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="win32\EPSampleCod.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="win32\resource.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="win32\main.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\AppDelegate.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\HelloWorldScene.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\EPTextField.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\3rd\base64\base64.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\3rd\JSON\cJSON.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\3rd\md5\CMD5.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\3rd\zlib\easyzlib.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\GestureRecognizer\GestureRecognizer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\GestureRecognizer\LongPressGestureRecognizer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\GestureRecognizer\PanGestureRecognizer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\GestureRecognizer\PinchGestureRecognizer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\GestureRecognizer\RotationGestureRecognizer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\GestureRecognizer\TapGestureRecognizer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\keypad\EPNumberKeypadLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\EPGestureRecognizerLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\EPMacros.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\EPNotificationCenter.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\EPResourceManager.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\EPScrollListLayer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Classes\eplibs\EPSpriteButton.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="win32\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\AppDelegate.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\HelloWorldScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\3rd\base64\base64.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\3rd\JSON\cJSON.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\3rd\md5\CMD5.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\3rd\zlib\easyzlib.c">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\GestureRecognizer\GestureRecognizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\GestureRecognizer\LongPressGestureRecognizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\GestureRecognizer\PanGestureRecognizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\GestureRecognizer\PinchGestureRecognizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\GestureRecognizer\RotationGestureRecognizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\GestureRecognizer\TapGestureRecognizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\keypad\EPNumberKeypadLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\EPGestureRecognizerLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\EPNotificationCenter.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\EPResourceManager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\EPScrollListLayer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\EPSpriteButton.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\eplibs\EPTextField.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
