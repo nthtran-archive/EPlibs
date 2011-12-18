@@ -1,4 +1,4 @@
-﻿Build started 12/14/2011 2:36:32 PM.
+﻿Build started 12/17/2011 12:55:54 AM.
      1>Project "C:\cocos2d-x\EPlibs\EPSampleCod.win32.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug.win32\EPSampleCode.win32.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -20,4 +20,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.42
+Time Elapsed 00:00:00.18

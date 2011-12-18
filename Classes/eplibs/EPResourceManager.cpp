@@ -52,6 +52,7 @@ EPResourceManager::EPResourceManager()
     
     m_asyncLoadCount = 0;
     m_asyncTotalCount = 0;
+	m_loadingTime = 0;
 }
 
 EPResourceManager::~EPResourceManager()
@@ -304,7 +305,7 @@ void EPResourceManager::loadResourceAsync(void)
         
         unit->setState(kEPUnitStateLoading, NULL);
         CCTextureCache::sharedTextureCache()->addImageAsync(unit->getTexPath().c_str(), 
-                                                            _sharedResourceManager, 
+															_sharedResourceManager, 
                                                             callfuncO_selector(EPResourceManager::textureLoadedCallback));
         break;
     }
