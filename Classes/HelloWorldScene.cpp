@@ -47,6 +47,7 @@ bool HelloWorld::init()
 	m->setPosition(ccp(screenSize.width / 2, screenSize.height * 0.8f));
 	this->addChild(m);
 
+	this->setIsKeypadEnabled(true);
 	return true;
 }
 
@@ -60,23 +61,23 @@ void HelloWorld::loadedCallback(CCObject* pSender)
 
 void HelloWorld::completedCallback(CCObject* pSender)
 {
-		CCLOG("completedCallback\n");
+	CCLOG("completedCallback\n");
 
-		CCSprite *sp = CCSprite::spriteWithSpriteFrameName("blocks.png");
-		sp->setPosition(ccp_CENTER());
-		sp->setTag(123);
-		this->addChild(sp);
+	CCSprite *sp = CCSprite::spriteWithSpriteFrameName("blocks.png");
+	sp->setPosition(ccp_CENTER());
+	sp->setTag(123);
+	this->addChild(sp);
 
-		this->addTapRecognizer(sp);
+	this->addTapRecognizer(sp);
 
-		this->addRotationRecognizer(sp);
+	this->addRotationRecognizer(sp);
 
-		this->addPinchRecognizer(sp);
+	this->addPinchRecognizer(sp);
 
-		this->addPanRecognizer(sp);
+	this->addPanRecognizer(sp);
 
-		this->addLongPressRecognizer(sp);
-		this->setLongPressInterval(0.5f);
+	this->addLongPressRecognizer(sp);
+	this->setLongPressInterval(0.5f);
 }
 
 bool HelloWorld::gestureRecognizer(GestureRecognizer *gestureRecognizer)
@@ -143,4 +144,15 @@ void HelloWorld::performRotation(RotationGestureRecognizer *recognizer ,CCNode *
 void HelloWorld::pressAction(CCNode* node)
 {
 	CCLOG("pressAction");
+}
+
+void HelloWorld::keyBackClicked()
+{
+	CCLOG("Key Back Cliked");
+	EPResourceManager::purgeSharedResourceManager();
+	//EPNotificationCenter::sharedNotifCenter()->removeObserver(this, kResourceLoadedNotif);
+	EPNotificationCenter::purgeSharedNotifCenter();
+	//GameManager::purgeSharedGameManager();
+	//CocosDenshion::SimpleAudioEngine::end();
+	CCDirector::sharedDirector()->end();
 }

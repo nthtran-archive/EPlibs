@@ -24,6 +24,8 @@ public:
 	// implement the "static node()" method manually
 	LAYER_NODE_FUNC(HelloWorld);
 
+	virtual void keyBackClicked();
+
 private:
 	EPResourceManager *m_res;
 	cocos2d::CCPoint m_from;
